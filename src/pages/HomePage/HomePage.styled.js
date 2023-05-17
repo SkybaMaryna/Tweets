@@ -1,17 +1,17 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const StyledDiv = styled.div`
-width: 300px;
-height:200px;
-background-color: #766A92;
-border-radius: 20px;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-font-weight: 600;
-font-size: 20px;
-`
+  width: 300px;
+  height: 200px;
+  background-color: #766a92;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  font-size: 20px;
+`;
 
 export const StyledButton = styled.button`
   border-radius: 8px;
@@ -20,15 +20,19 @@ export const StyledButton = styled.button`
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background: linear-gradient(114.99deg, #471CA9 -0.99%, #5736A3 54.28%, #4B2A99 78.99%);
+  background: linear-gradient(
+    114.99deg,
+    #471ca9 -0.99%,
+    #5736a3 54.28%,
+    #4b2a99 78.99%
+  );
   cursor: pointer;
 
-&:hover {
-  border-color: #646cff;
-}
-&:focus,
-&:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-`
+  &:hover {
+    border-color: #646cff;
+  }
+  &:focus,
+  &:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+  }
+`;

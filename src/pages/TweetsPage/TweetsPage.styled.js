@@ -85,7 +85,7 @@ export const StyledFollowers = styled.p`
   color: #ebd8ff;
 `;
 
-export const StyledButton = styled.button`
+export const StyledFollowButton = styled.button`
   width: 196px;
   height: 50px;
   position: absolute;
@@ -93,6 +93,26 @@ export const StyledButton = styled.button`
   top: 374px;
 
   background: #ebd8ff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  outline: none;
+
+  font-family: inherit;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.22;
+  color: #373737;
+`;
+
+export const StyledUnfollowButton = styled.button`
+  width: 196px;
+  height: 50px;
+  position: absolute;
+  left: 92px;
+  top: 374px;
+
+  background: #5cd3a8;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
   outline: none;

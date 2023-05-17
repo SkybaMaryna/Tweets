@@ -10,8 +10,11 @@ export async function fetchUsersInfo() {
   }
 }
 
-export async function updateUserInfo(userID) {
-  const response = await axios.put(`users/${userID}`);
-  console.log(response);
-  return response.data.results;
+export async function updateUserInfo(userID, data) {
+  try {
+    const response = await axios.put(`users/${userID}`, data);
+    return response.data;
+  } catch (error) {
+    return error.message;
+  }
 }

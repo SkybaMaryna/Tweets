@@ -18,8 +18,8 @@ const Users = ({ users, onUnfollow, onFollow }) => {
       {users.map(({ tweets, followers, id, follow }) => (
         <StyledItem key={id}>
           <StyledDiv>
-            <StyledLogo src="src/assets/images/Logo.png" alt="logo" />
-            <StyledAvatar src="src/assets/images/Boy.png" alt="avatar" />
+            <StyledLogo src="./src/assets/images/Logo.png" alt="logo" />
+            <StyledAvatar src="./src/assets/images/Boy.png" alt="avatar" />
             <StyledBorder></StyledBorder>
             <StyledTweets>{tweets} TWEETS</StyledTweets>
             <StyledFollowers>

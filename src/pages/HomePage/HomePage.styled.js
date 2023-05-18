@@ -27,6 +27,7 @@ export const StyledButton = styled.button`
     #4b2a99 78.99%
   );
   cursor: pointer;
+  margin: 5px;
 
   &:hover {
     border-color: #646cff;

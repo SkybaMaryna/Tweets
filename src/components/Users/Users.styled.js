@@ -3,6 +3,8 @@ import styled from 'styled-components';
 export const StyledList = styled.ul`
   display: flex;
   gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
 `;
 
 export const StyledItem = styled.li`

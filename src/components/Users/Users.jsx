@@ -50,7 +50,7 @@ const Users = ({ users, onUnfollow, onFollow }) => {
 export default Users;
 
 Users.propTypes = {
-  users: PropTypes.arrayOf(PropTypes.object).isRequired,
+  users: PropTypes.array.isRequired,
   onUnfollow: PropTypes.func.isRequired,
   onFollow: PropTypes.func.isRequired,
 };

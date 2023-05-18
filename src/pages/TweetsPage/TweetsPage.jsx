@@ -1,24 +1,25 @@
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { fetchUsersInfo, updateUserInfo } from '../../utiles/usersAPI';
-import {
-  StyledAvatar,
-  StyledBorder,
-  StyledDiv,
-  StyledFollowButton,
-  StyledFollowers,
-  StyledItem,
-  StyledLogo,
-  StyledTweets,
-  StyledUnfollowButton,
-} from './TweetsPage.styled';
+import Pagination from '../../components/Pagination/Pagination';
+import Users from '../../components/Users/Users';
+import BackBtn from '../../components/BackBtn/BackBtn';
 
 const TweetsPage = () => {
   const [users, setUsers] = useState([]);
-  console.log(users);
+  //   const [loading, setLoading] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [usersPerPage] = useState(3);
+
   useEffect(() => {
     fetchUsersInfo().then(setUsers);
   }, []);
+
+  const lastUserIndex = currentPage * usersPerPage;
+  const firstUserIndex = lastUserIndex - usersPerPage;
+  const currentUser = users.slice(firstUserIndex, lastUserIndex);
+
+  const paginate = pageNumber => setCurrentPage(pageNumber);
 
   const onFollow = async (id, followers) => {
     const updateFollower = followers + 1;
@@ -35,36 +36,13 @@ const TweetsPage = () => {
 
   return (
     <div>
-      <ul>
-        {users.map(({ tweets, followers, id, follow }) => (
-          <StyledItem key={id}>
-            <StyledDiv>
-              <StyledLogo src="src/assets/images/Logo.png" alt="logo" />
-              <StyledAvatar src="src/assets/images/Boy.png" alt="avatar" />
-              <StyledBorder></StyledBorder>
-              <StyledTweets>{tweets} TWEETS</StyledTweets>
-              <StyledFollowers>
-                {new Intl.NumberFormat('en').format(followers)} FOLLOWERS
-              </StyledFollowers>
-              {follow ? (
-                <StyledUnfollowButton
-                  type="button"
-                  onClick={() => onUnfollow(id, followers)}
-                >
-                  FOLLOWING
-                </StyledUnfollowButton>
-              ) : (
-                <StyledFollowButton
-                  type="button"
-                  onClick={() => onFollow(id, followers)}
-                >
-                  FOLLOW
-                </StyledFollowButton>
-              )}
-            </StyledDiv>
-          </StyledItem>
-        ))}
-      </ul>
+      <Users users={currentUser} onFollow={onFollow} onUnfollow={onUnfollow} />
+      <Pagination
+        usersPerPage={usersPerPage}
+        totalUsers={users.length}
+        paginate={paginate}
+      />
+      <BackBtn />
     </div>
   );
 };

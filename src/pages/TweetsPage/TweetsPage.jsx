@@ -4,6 +4,7 @@ import { fetchUsersInfo, updateUserInfo } from '../../utiles/usersAPI';
 import Users from '../../components/Users/Users';
 import BackBtn from '../../components/BackBtn/BackBtn';
 import LoadMoreBtn from '../../components/LoadMoreBtn/LoadMoreBtn';
+import Filter from '../../components/Filter/Filter';
 
 const USER_PER_PAGE = 3;
 
@@ -12,6 +13,7 @@ const TweetsPage = () => {
   const [firstUserIndex] = useState(0);
   const [lastUserIndex, setLastUserIndex] = useState(3);
   const [paginateUsers, setPaginateUsers] = useState([]);
+  const [filter, setFilter] = useState('all');
 
   useEffect(() => {
     fetchUsersInfo().then(setUsers);
@@ -38,10 +40,28 @@ const TweetsPage = () => {
     fetchUsersInfo().then(setUsers);
   };
 
+  const onChooseFilter = e => {
+    setFilter(e.target.value);
+  };
+
+  const applyFilters = () => {
+    switch (filter) {
+      case 'all':
+        return paginateUsers;
+      case 'follow':
+        return paginateUsers.filter(user => !user.follow);
+      case 'following':
+        return paginateUsers.filter(user => user.follow);
+      default:
+        break;
+    }
+  };
+
   return (
     <div>
+      <Filter onFilter={onChooseFilter} />
       <Users
-        users={paginateUsers}
+        users={applyFilters()}
         onFollow={onFollow}
         onUnfollow={onUnfollow}
       />

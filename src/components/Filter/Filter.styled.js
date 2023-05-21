@@ -17,6 +17,8 @@ export const StyledSelect = styled.select`
     #5736a3 54.28%,
     #4b2a99 78.99%
   );
+  cursor: pointer;
+  outline: none;
 `;
 
 export const StyledOption = styled.option`

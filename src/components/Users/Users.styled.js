@@ -100,11 +100,13 @@ export const StyledFollowButton = styled.button`
   position: absolute;
   left: 92px;
   top: 374px;
+  cursor: pointer;
 
-  background: #ebd8ff;
+  background-color: #ebd8ff;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
   outline: none;
+  border: none;
 
   font-family: inherit;
   font-style: normal;
@@ -112,6 +114,12 @@ export const StyledFollowButton = styled.button`
   font-size: 18px;
   line-height: 1.22;
   color: #373737;
+  transition: background-color 250ms ease-in-out;
+
+  &:hover,
+  &:focus {
+    background-color: #fcd8ff;
+  }
 `;
 
 export const StyledUnfollowButton = styled.button`
@@ -120,11 +128,13 @@ export const StyledUnfollowButton = styled.button`
   position: absolute;
   left: 92px;
   top: 374px;
+  cursor: pointer;
 
   background: #5cd3a8;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
   outline: none;
+  border: none;
 
   font-family: inherit;
   font-style: normal;
@@ -132,4 +142,10 @@ export const StyledUnfollowButton = styled.button`
   font-size: 18px;
   line-height: 1.22;
   color: #373737;
+  transition: background-color 250ms ease-in-out;
+
+  &:hover,
+  &:focus {
+    background-color: #5cd1d3;
+  }
 `;

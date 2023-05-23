@@ -15,11 +15,11 @@ import {
 const Users = ({ users, onUnfollow, onFollow }) => {
   return (
     <StyledList>
-      {users.map(({ tweets, followers, id, follow }) => (
+      {users.map(({ tweets, followers, id, follow, avatar }) => (
         <StyledItem key={id}>
           <StyledDiv>
             <StyledLogo src="/pictures/Logo.png" alt="logo" width="76" />
-            <StyledAvatar src="/pictures/Boy.png" alt="avatar" width="80" />
+            <StyledAvatar src={avatar} alt="avatar" width="80" />
             <StyledBorder></StyledBorder>
             <StyledTweets>{tweets} TWEETS</StyledTweets>
             <StyledFollowers>

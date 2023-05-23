@@ -41,13 +41,18 @@ export const StyledLogo = styled.img`
 
 export const StyledAvatar = styled.img`
   position: absolute;
-  width: 80px;
-  height: 80px;
+  width: 62px;
+  height: 62px;
   left: 150px;
   top: 178px;
 
-  border-radius: 86px;
+  border-radius: 50%;
   z-index: 1;
+
+  border: solid #ebd8ff 9px;
+  box-shadow: 0px 4.39163px 4.39163px rgba(0, 0, 0, 0.06),
+    inset 0px -2.19582px 4.39163px #ae7be3,
+    inset 0px 4.39163px 3.29372px #fbf8ff;
 `;
 
 export const StyledBorder = styled.div`

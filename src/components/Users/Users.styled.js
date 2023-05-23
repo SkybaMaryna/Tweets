@@ -23,7 +23,7 @@ export const StyledItem = styled.li`
 `;
 
 export const StyledDiv = styled.div`
-  background-image: url('src/assets/images/backgroundImg.png');
+  background-image: url('/pictures/backgroundImg.png');
   background-repeat: no-repeat;
   background-position: 36px 28px;
   width: 100%;

@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import {
   StyledAvatar,
-  StyledBorder,
   StyledDiv,
   StyledFollowButton,
   StyledFollowers,
@@ -20,7 +19,6 @@ const Users = ({ users, onUnfollow, onFollow }) => {
           <StyledDiv>
             <StyledLogo src="/pictures/Logo.png" alt="logo" width="76" />
             <StyledAvatar src={avatar} alt="avatar" width="80" />
-            <StyledBorder></StyledBorder>
             <StyledTweets>{tweets} TWEETS</StyledTweets>
             <StyledFollowers>
               {new Intl.NumberFormat('en').format(followers)} FOLLOWERS
